@@ -77,6 +77,15 @@ const textEditoptions = () => {
     if (toggleTarget === "--free-made-teksten") {
       pointertrue(isActive);
       h1editable.addEventListener("click", () => {
+        textoptionbuttons.forEach((buttons) => {
+          console.log(buttons);
+          buttons.style.pointerEvents = "auto";
+          buttons.style.opacity = "1";
+          buttons.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log(buttons);
+          });
+        });
         hasActiveclass(isActive);
       });
     } else {
@@ -85,13 +94,6 @@ const textEditoptions = () => {
       );
       texttooltipContainer.style.display = "none";
     }
-  });
-
-  textoptionbuttons.forEach((buttons) => {
-    buttons.addEventListener("click", (event) => {
-      event.preventDefault();
-      console.log(buttons);
-    });
   });
 };
 // initialize functions
