@@ -59,43 +59,91 @@ const textEditoptions = () => {
   const hasactiveContainer = document.querySelectorAll(".--list-container");
   const textoptionbuttons = document.querySelectorAll(".--plus-icon-container");
   const h1editable = document.querySelector("#editexth1");
+  const texttooltipContainer = document.querySelector(
+    ".--text-option-container"
+  );
 
   const hasActiveclass = (show) => {
-    const texttooltipContainer = document.querySelector(
-      ".--text-option-container"
-    );
-
     texttooltipContainer.style.display = show ? "inline-flex" : "none";
   };
+
   const pointertrue = (show) => {
     h1editable.style.cursor = show ? "pointer" : "context-menu";
   };
+
+  const activePointer = (buttons) => {
+    buttons.style.opacity = "1";
+    buttons.style.pointerEvents = "auto";
+    buttons.style.cursor = "pointer";
+  };
+
   hasactiveContainer.forEach((buttons) => {
     const isActive = buttons.classList.contains("active");
     const toggleTarget = buttons.getAttribute("data-toggle-target");
 
     if (toggleTarget === "--free-made-teksten") {
       pointertrue(isActive);
+
       h1editable.addEventListener("click", () => {
-        textoptionbuttons.forEach((buttons) => {
-          console.log(buttons);
-          buttons.style.pointerEvents = "auto";
-          buttons.style.opacity = "1";
-          buttons.addEventListener("click", (event) => {
+        textoptionbuttons.forEach((button) => {
+          activePointer(button);
+          button.addEventListener("click", (event) => {
             event.preventDefault();
-            console.log(buttons);
           });
         });
+
         hasActiveclass(isActive);
       });
     } else {
-      const texttooltipContainer = document.querySelector(
-        ".--text-option-container"
-      );
+      textoptionbuttons.forEach((button) => {
+        button.style.opacity = "0.3";
+        button.style.pointerEvents = "none";
+        button.style.cursor = "context-menu";
+      });
+
       texttooltipContainer.style.display = "none";
     }
+  });
+};
+//stilj changing font function
+
+const stiljfontChange = () => {
+  const cardsContainer = document.querySelectorAll(".--style-card");
+
+  cardsContainer.forEach((changefont) => {
+    changefont.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const ptags = changefont.querySelectorAll("p");
+
+      ptags.forEach((fontvalue, index) => {
+        if (index === 0) {
+          const getptyle = window.getComputedStyle(fontvalue);
+          const fontfamily = getptyle.fontFamily;
+          const maincontent = document.querySelectorAll(
+            ".--hasborder, .--lower-text h3, .--lowertext-content h3"
+          );
+
+          maincontent.forEach((transform) => {
+            transform.style.fontFamily = fontfamily;
+          });
+        }
+        if (index === 1) {
+          const getptyle = window.getComputedStyle(fontvalue);
+          const fontfamily = getptyle.fontFamily;
+          const middlecontent = document.querySelectorAll(
+            ".--middletext-content p, .--lowertext-content p, .--upper-text p"
+          );
+
+          middlecontent.forEach((transform) => {
+            transform.style.fontFamily = fontfamily;
+          });
+        }
+      });
+    });
   });
 };
 // initialize functions
 toolbarTrigger();
 addBorderimg();
+stiljfontChange();

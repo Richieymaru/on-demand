@@ -2,10 +2,7 @@
   font-family: "SF Movie Poster";
   src: url("../fonts/SF\ Movie\ Poster.ttf") format("ttf");
 }
-@font-face {
-  font-family: "Freeland";
-  src: url("../fonts/Freeland.ttf") format("ttf");
-}
+
 .--stijl-container {
   display: none;
   width: 320px;
@@ -50,12 +47,13 @@
   border: 1px solid #ccc;
   background: #fff;
   align-self: stretch;
+  cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
 }
 .--style-card:nth-child(1) p:nth-child(1) {
   color: #292929;
-  font-family: "SF Movie Poster";
+  font-family: var(--heavy-font);
   font-size: 44px;
   font-style: normal;
   font-weight: 700;
@@ -65,7 +63,7 @@
 }
 .--style-card:nth-child(1) p:nth-child(2) {
   color: #292929;
-  font-family: Century Gothic, sans-serif;
+  font-family: var(--secondary-font);
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -73,7 +71,7 @@
 }
 .--style-card:nth-child(1) p:nth-child(3) {
   color: #292929;
-  font-family: Century Gothic, sans-serif;
+  font-family: var(--secondary-font);
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -81,7 +79,7 @@
 }
 .--style-card:nth-child(2) p:nth-child(1) {
   color: #292929;
-  font-family: "Freeland";
+  font-family: var(--freeland-font);
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -89,7 +87,7 @@
 }
 .--style-card:nth-child(2) p:nth-child(2) {
   color: #292929;
-  font-family: Futura, sans-serif;
+  font-family: "Futura";
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
@@ -97,7 +95,7 @@
 }
 .--style-card:nth-child(2) p:nth-child(3) {
   color: #292929;
-  font-family: Futura Bk BT, sans-serif;
+  font-family: "Futura Bk BT";
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -105,15 +103,15 @@
 }
 .--style-card:nth-child(3) p:nth-child(1) {
   color: #292929;
-  font-family: Fredoka One;
+  font-family: "Fredoka One";
   font-size: 32px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 25px; /* 78.125% */
 }
 .--style-card:nth-child(3) p:nth-child(2) {
   color: #292929;
-  font-family: Comic Sans MS;
+  font-family: "Comic Sans MS";
   font-size: 19px;
   font-style: normal;
   font-weight: 700;
@@ -121,7 +119,7 @@
 }
 .--style-card:nth-child(3) p:nth-child(3) {
   color: #292929;
-  font-family: Comic Sans MS;
+  font-family: "Comic Sans MS";
   font-size: 13px;
   font-style: normal;
   font-weight: 400;

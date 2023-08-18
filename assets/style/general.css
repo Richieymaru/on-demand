@@ -23,12 +23,16 @@
   src: url("../fonts/Wanderlust\ Gold\ Pro.ttf") format("truetype");
   font-weight: normal;
 }
-
+@font-face {
+  font-family: "Freeland";
+  src: url("../fonts/Freeland.ttf") format("ttf");
+}
 :root {
   --main-font: "Ubuntu", sans-serif;
   --secondary-font: "Century Gothic Regular", sans-serif;
   --secondary-font-bold: "Century Gothic Bold", sans-serif;
   --heavy-font: "SF Movie Poster", sans-serif;
+  --freeland-font: "Freeland", sans-serif;
   --caligraphy-font: "Wanderlust Gold";
   --main-fontcolor: #292929;
   --actionbutton-color: #27ae60;
