@@ -77,6 +77,38 @@ const textEditoptions = () => {
     buttons.style.cursor = "pointer";
   };
 
+  const firstbuttonlistener = (button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const parentElement = button?.closest(".--teksten-button-holder");
+      parentElement.classList.toggle("active");
+      const active = parentElement.classList.contains("active");
+      activeFirstbutton(active, parentElement);
+
+      // Assuming isActive is a global or accessible variable
+    });
+  };
+  const activeFirstbutton = (active, parentElement) => {
+    if (active) {
+      parentElement.innerHTML = `<h1 class="--eentitle">Een titel toevoegen</h1>
+      <button class="--plus-icon-container" style="background: #fff; opacity:1;">
+        <!-- SVG code here -->
+      </button>`;
+
+      // Reattach the click event listener to the button with index 0
+      const newButton = parentElement.querySelector(".--plus-icon-container");
+      firstbuttonlistener(newButton);
+    } else {
+      parentElement.innerHTML = `Kies de stijl van de titel...
+      <button class="--plus-icon-container">
+        <!-- SVG code here -->
+      </button>`;
+
+      // Reattach the click event listener to the button with index 0
+      const newButton = parentElement.querySelector(".--plus-icon-container");
+      firstbuttonlistener(newButton);
+    }
+  };
   hasactiveContainer.forEach((buttons) => {
     const isActive = buttons.classList.contains("active");
     const toggleTarget = buttons.getAttribute("data-toggle-target");
@@ -85,15 +117,14 @@ const textEditoptions = () => {
       pointertrue(isActive);
 
       h1editable.addEventListener("click", () => {
-        textoptionbuttons.forEach((button) => {
+        textoptionbuttons.forEach((button, index) => {
           activePointer(button);
-          button.addEventListener("click", (event) => {
-            event.preventDefault();
-          });
+          if (index === 0) {
+            firstbuttonlistener(button);
+          }
         });
-
-        hasActiveclass(isActive);
       });
+      hasActiveclass(isActive);
     } else {
       textoptionbuttons.forEach((button) => {
         button.style.opacity = "0.3";
@@ -141,7 +172,9 @@ const stiljfontChange = () => {
     });
   });
 };
+
 // initialize functions
 toolbarTrigger();
 addBorderimg();
+textEditoptions();
 stiljfontChange();
