@@ -78,6 +78,7 @@ const textEditoptions = () => {
 
   const activeFirstbutton = (active, parentElement) => {
     if (active) {
+      parentElement.style.borderStyle = "solid";
       parentElement.innerHTML = `<h1 class="--eentitle">Een titel toevoegen</h1>
       <button class="--plus-icon-container" style="background: #fff; opacity:1; pointer-events: auto">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,6 +90,8 @@ const textEditoptions = () => {
       const newButton = parentElement.querySelector(".--plus-icon-container");
       firstbuttonlistener(newButton);
     } else {
+      parentElement.style.borderStyle = "dashed";
+
       parentElement.innerHTML = `Kies de stijl van de titel...
       <button class="--plus-icon-container" style=" opacity:1; pointer-events: auto">
       <svg
