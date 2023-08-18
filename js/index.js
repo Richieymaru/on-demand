@@ -117,9 +117,9 @@ const stiljfontChange = () => {
       const ptags = changefont.querySelectorAll("p");
 
       ptags.forEach((fontvalue, index) => {
+        const getptyle = window.getComputedStyle(fontvalue);
+        const fontfamily = getptyle.fontFamily;
         if (index === 0) {
-          const getptyle = window.getComputedStyle(fontvalue);
-          const fontfamily = getptyle.fontFamily;
           const maincontent = document.querySelectorAll(
             ".--hasborder, .--lower-text h3, .--lowertext-content h3"
           );
@@ -129,8 +129,6 @@ const stiljfontChange = () => {
           });
         }
         if (index === 1) {
-          const getptyle = window.getComputedStyle(fontvalue);
-          const fontfamily = getptyle.fontFamily;
           const middlecontent = document.querySelectorAll(
             ".--middletext-content p, .--lowertext-content p, .--upper-text p"
           );
