@@ -53,6 +53,14 @@
   font-weight: 700;
   line-height: 50px;
 }
+.--eensubtitle {
+  color: #515151;
+  font-family: Century Gothic;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
 .--teksten-button-container button {
   display: flex;
   padding: 4px;
