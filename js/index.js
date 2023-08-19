@@ -156,6 +156,7 @@ const textEditoptions = () => {
       secondbuttonlistener(newButton);
     }
   };
+
   const triggerinputstyle = (getInput) => {
     getInput.pointerEvents = "auto";
     getInput.style.border = "1px solid red";
@@ -171,7 +172,6 @@ const textEditoptions = () => {
           const getInput = document.querySelector(".inputsubtitle");
           triggerinputstyle(getInput);
           getInput.focus();
-          activeSecondbutton(getInput);
         });
       } else {
         button.addEventListener("click", (event) => {
@@ -190,6 +190,7 @@ const textEditoptions = () => {
       }
     }
   };
+
   hasactiveContainer.forEach((buttons) => {
     const isActive = buttons.classList.contains("active");
     const toggleTarget = buttons.getAttribute("data-toggle-target");
@@ -224,10 +225,11 @@ const textEditoptions = () => {
     } else {
       const subtitel = document.querySelector(".--eensubtitle");
       if (subtitel !== null) {
-        console.log(subtitel);
+        console.log(subtitel)
         subtitel.style.pointerEvents = "none";
         subtitel.style.cursor = "context-menu";
       }
+
       textoptionbuttons.forEach((button) => {
         button.style.opacity = "0.3";
         button.style.pointerEvents = "none";
