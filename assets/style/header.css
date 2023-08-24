@@ -1,0 +1,144 @@
+.--header-wrapper {
+  /* position: fixed; */
+  width: 100%;
+  /* top: 0;
+  left: 0; */
+  z-index: 1000;
+  border-top: 4px solid #e98d74;
+  background: #fff;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.08),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+}
+.--header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem 1rem 0.75rem 1rem;
+}
+
+.--logo-link-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.--logo-link-container img {
+  width: 100%;
+  max-width: 9rem;
+  min-height: 2rem;
+  flex-shrink: 0;
+}
+
+.--control-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.--edit-container,
+.--save-container,
+.--dots-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.--edit-container {
+  gap: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.--save-container {
+  gap: 0.5rem;
+}
+
+.--edit-container img,
+.--save-container img,
+.--dots-container img,
+.--changes-container img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.--adjust-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.--adjust-container select {
+  display: flex;
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  background: #f0f0f0;
+  max-width: 4rem;
+  min-height: 1.25rem;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.--changes-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.--account-container {
+  display: flex;
+  width: 25rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.--person-container {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  background: #fff;
+}
+
+.--cart-container {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.--cart-container div {
+  display: flex;
+  padding: 0.125rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 2.5rem;
+  background: #292929;
+}
+
+.--cart-container div p {
+  color: #fff;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 0.9375rem;
+}
+
+.--person-container img,
+.--cart-container img {
+  width: 1.5rem;
+  height: 1.5rem;
+}

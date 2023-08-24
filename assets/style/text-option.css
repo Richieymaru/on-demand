@@ -1,0 +1,73 @@
+.--text-option-container {
+  display: none;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 8px;
+  max-width: 950px;
+  margin: 0 auto;
+  position: absolute;
+  top: 3.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.--select-text-option-container {
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+.--select-text-option-container select {
+  display: flex;
+  width: 180px;
+  padding: 4px 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  max-width: 180px;
+}
+.--select-font-size {
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+.--select-font-size select {
+  display: flex;
+  padding: 4px 8px;
+  width: 70px;
+  max-width: 70px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.--btns-text-option {
+  height: 35px;
+  width: 35px;
+
+  padding: 5px;
+}
+
+.--btns-w-desc {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+}
+
+.--color-select {
+  height: 30px;
+  width: 30px;
+  background-color: #dca693;
+  border-radius: 100%;
+}
+
+.--color-select-container {
+  padding: 5px;
+}
+
+.--btns-text-option:hover,
+.--btns-w-desc:hover,
+.--color-select-container:hover {
+  background-color: var(--backbutton-color);
+  border-radius: 6px;
+  cursor: pointer;
+}

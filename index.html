@@ -3,7 +3,745 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>On-Demand</title>
+    <link rel="stylesheet" href="assets/style/reset.css" />
+    <link rel="stylesheet" href="assets/style/general.css" />
+    <link rel="stylesheet" href="assets/style/header.css" />
+    <link rel="stylesheet" href="assets/style/main.css" />
+    <link rel="stylesheet" href="assets/style/teksten-modal.css" />
+    <link rel="stylesheet" href="assets/style/stijl-modal.css" />
+    <link rel="stylesheet" href="assets/style/preview.css" />
+    <link rel="stylesheet" href="assets/style/footer.css" />
+    <link rel="stylesheet" href="assets/style/indeling-modal.css" />
+    <link rel="stylesheet" href="assets/style/text-option.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="--main-wrapper">
+      <header class="--header-wrapper">
+        <nav class="--header-container">
+          <div class="--logo-link-container">
+            <img alt="logo" src="assets/img/Logo.svg" />
+            <div class="--control-container">
+              <div class="--edit-container">
+                <p>Titel van dit product...</p>
+                <img alt="edit" src="assets/img/edit.svg" />
+              </div>
+              <div class="--save-container">
+                <img alt="save" src="assets/img/save.svg" />
+                <p>Opslaan</p>
+              </div>
+              <div class="--dots-container">
+                <img src="assets/img/kebabmenu.svg" alt="kebabmenu" />
+              </div>
+            </div>
+          </div>
+          <div class="--adjust-container">
+            <select name="percent" id="percent">
+              <option value="100%">100%</option>
+              <option value="75%">75%</option>
+              <option value="50%">50%</option>
+              <option value="25%">25%</option>
+              <option value="0%">0%</option>
+            </select>
+            <div class="--changes-container">
+              <img src="assets/img/undo.svg" alt="undo" />
+              <img src="assets/img/redo.svg" alt="redo" />
+            </div>
+          </div>
+          <div class="--account-container">
+            <div class="--person-container">
+              <img src="assets/img/person.svg" alt="person" />
+              <img src="assets/img/arrow-down.svg" alt="arrow-down" />
+            </div>
+            <div class="--cart-container">
+              <img src="assets/img/basket.svg" alt="basket" />
+              <div>
+                <p>3</p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="--main-container">
+        <section class="--bibliotheken-wrapper">
+          <div class="--bibliotheken-container">
+            <div
+              class="--list-container"
+              data-toggle-target="--free-made-teksten"
+            >
+              <img src="assets/img/text.svg" alt="text" />
+              <p>Tekst</p>
+            </div>
+            <div
+              class="--list-container"
+              data-toggle-target="--stijl-container"
+            >
+              <img src="assets/img/stijl.svg" alt="stijl" />
+              <p>Stijl</p>
+            </div>
+            <div
+              class="--list-container"
+              data-toggle-target="--afbeelding-container"
+            >
+              <img src="assets/img/afbeelding.svg" alt="afbeelding" />
+              <p>Afbeelding</p>
+            </div>
+            <div
+              class="--list-container"
+              data-toggle-target="--vormen-container"
+            >
+              <img src="assets/img/vormen.svg" alt="vormen" />
+              <p>Vormen</p>
+            </div>
+            <div
+              class="--list-container"
+              data-toggle-target="--uploads-container"
+            >
+              <img src="assets/img/uploads.svg" alt="uploads" />
+              <p>Uploads</p>
+            </div>
+            <div
+              class="--list-container"
+              data-toggle-target="--indeling-container"
+            >
+              <img
+                src="assets/img/indeling.svg"
+                alt="indeling"
+                data-toggle-target="listindeling"
+              />
+              <p>Indeling</p>
+            </div>
+            <div
+              class="--list-container"
+              data-toggle-target="--achtergr-container"
+            >
+              <img src="assets/img/achtergr.svg" alt="achtergr" />
+              <p>Achtergr</p>
+            </div>
+          </div>
+          <div class="--free-made-teksten">
+            <button class="--main-teksten-btn">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 4.5V9H15.5C16.0312 9 16.5 9.46875 16.5 10C16.5 10.5625 16.0312 11 15.5 11H11V15.5C11 16.0625 10.5312 16.5 10 16.5C9.4375 16.5 9 16.0625 9 15.5V11H4.5C3.9375 11 3.5 10.5625 3.5 10C3.5 9.46875 3.9375 9 4.5 9H9V4.5C9 3.96875 9.4375 3.5 10 3.5C10.5312 3.5 11 3.96875 11 4.5Z"
+                  fill="white"
+                />
+              </svg>
+              Voeg een tekst toe
+            </button>
+            <div class="--teksten-button-container">
+              <div class="--teksten-button-holder" id="titlesd">
+                <p>Kies de stijl van de titel...</p>
+                <button class="--plus-icon-container">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.5 10C16.5 10.4375 16.1562 10.75 15.75 10.75H10.75V15.75C10.75 16.1875 10.4062 16.5312 10 16.5312C9.5625 16.5312 9.25 16.1875 9.25 15.75V10.75H4.25C3.8125 10.75 3.5 10.4375 3.5 10.0312C3.5 9.59375 3.8125 9.25 4.25 9.25H9.25V4.25C9.25 3.84375 9.5625 3.53125 10 3.53125C10.4062 3.53125 10.75 3.84375 10.75 4.25V9.25H15.75C16.1562 9.25 16.5 9.59375 16.5 10Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="--teksten-button-holder" id="secondbtn">
+                Kies de stijl van de subtitel...
+                <button class="--plus-icon-container">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.5 10C16.5 10.4375 16.1562 10.75 15.75 10.75H10.75V15.75C10.75 16.1875 10.4062 16.5312 10 16.5312C9.5625 16.5312 9.25 16.1875 9.25 15.75V10.75H4.25C3.8125 10.75 3.5 10.4375 3.5 10.0312C3.5 9.59375 3.8125 9.25 4.25 9.25H9.25V4.25C9.25 3.84375 9.5625 3.53125 10 3.53125C10.4062 3.53125 10.75 3.84375 10.75 4.25V9.25H15.75C16.1562 9.25 16.5 9.59375 16.5 10Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="--teksten-button-holder">
+                Kies de stijl van de alinea...
+                <button class="--plus-icon-container">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.5 10C16.5 10.4375 16.1562 10.75 15.75 10.75H10.75V15.75C10.75 16.1875 10.4062 16.5312 10 16.5312C9.5625 16.5312 9.25 16.1875 9.25 15.75V10.75H4.25C3.8125 10.75 3.5 10.4375 3.5 10.0312C3.5 9.59375 3.8125 9.25 4.25 9.25H9.25V4.25C9.25 3.84375 9.5625 3.53125 10 3.53125C10.4062 3.53125 10.75 3.84375 10.75 4.25V9.25H15.75C16.1562 9.25 16.5 9.59375 16.5 10Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="--stijl-container">
+            <h1>Kies een stijl</h1>
+            <div class="--stijl-fontstyle-container">
+              <div class="--style-card">
+                <p>SF Movie Poster</p>
+                <p>Century Gothic</p>
+                <p>Century Gothic</p>
+                <div class="overlay"></div>
+              </div>
+              <div class="--style-card">
+                <p>Freeland</p>
+                <p>Futura Medium</p>
+                <p>Futura Book</p>
+                <div class="overlay"></div>
+              </div>
+              <div class="--style-card">
+                <p>Fredoka</p>
+                <p>Futura Medium</p>
+                <p>Futura Book</p>
+                <div class="overlay"></div>
+              </div>
+            </div>
+          </div>
+          <div class="--indeling-container">
+            <div class="--top-indeling">
+              <h1>Pagina indeling</h1>
+              <select name="" id="">
+                <option value="Alle indeligen">Alle indelingen</option>
+              </select>
+            </div>
+            <div class="--indeling-layouts">
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="78" height="55" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect width="90" height="61" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="78" height="26" fill="#D9D9D9" />
+                  <rect x="6" y="36" width="78" height="26" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect width="90" height="31" fill="#D9D9D9" />
+                  <rect y="35" width="89" height="27" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="37" height="55" fill="#D9D9D9" />
+                  <rect x="47" y="6" width="37" height="55" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect width="43" height="61" fill="#D9D9D9" />
+                  <rect x="47" width="43" height="61" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="23" height="35" fill="#D9D9D9" />
+                  <rect x="33" y="6" width="53" height="35" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="1" y="1" width="28" height="40" fill="#D9D9D9" />
+                  <rect x="33" y="1" width="56" height="40" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="23" height="55" fill="#D9D9D9" />
+                  <rect x="33" y="6" width="23" height="55" fill="#D9D9D9" />
+                  <rect x="60" y="6" width="23" height="55" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="1" y="1" width="26" height="60" fill="#D9D9D9" />
+                  <rect x="31" y="1" width="26" height="60" fill="#D9D9D9" />
+                  <rect x="61" y="1" width="28" height="60" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="37" height="55" fill="#D9D9D9" />
+                  <rect x="47" y="6" width="37" height="26" fill="#D9D9D9" />
+                  <rect x="47" y="36" width="37" height="26" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="37" height="27" fill="#D9D9D9" />
+                  <rect x="6" y="37" width="37" height="27" fill="#D9D9D9" />
+                  <rect x="47" y="6" width="37" height="27" fill="#D9D9D9" />
+                  <rect x="47" y="37" width="37" height="27" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+              <div class="--indeling-layout-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="90"
+                  height="127"
+                  viewBox="0 0 90 127"
+                  fill="none"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    fill="white"
+                  />
+                  <rect x="6" y="6" width="23" height="27" fill="#D9D9D9" />
+                  <rect x="33" y="6" width="23" height="27" fill="#D9D9D9" />
+                  <rect x="60" y="6" width="23" height="27" fill="#D9D9D9" />
+                  <rect x="60" y="37" width="23" height="27" fill="#D9D9D9" />
+                  <rect x="6" y="37" width="50" height="27" fill="#D9D9D9" />
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="89"
+                    height="126"
+                    rx="3.5"
+                    stroke="#E4E4E4"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="--afbeelding-container"></div>
+          <div class="--vormen-container"></div>
+          <div class="--uploads-container"></div>
+          <div class="--achtergr-container"></div>
+        </section>
+        <section class="--preview-wrapper">
+          <div class="--text-option-container">
+            <div class="--color-select-container">
+              <div class="--color-select"></div>
+            </div>
+
+            <div class="--select-text-option-container">
+              <select>
+                <option>Font 1</option>
+                <option>Font 1</option>
+                <option>Font 1</option>
+              </select>
+            </div>
+            <div class="--select-font-size">
+              <select>
+                <option>108</option>
+                <option>109</option>
+                <option>110</option>
+              </select>
+            </div>
+
+            <button class="--btns-text-option">
+              <img src="assets/img/v6-icon-bold.svg" alt="bold" />
+            </button>
+            <button class="--btns-text-option">
+              <img src="assets/img/v6-icon-1-italic.svg" alt="italic" />
+            </button>
+            <button class="--btns-text-option">
+              <img src="assets/img/v6-icon-2 - underline.svg" alt="underline" />
+            </button>
+            <button class="--btns-text-option">
+              <img
+                src="assets/img/v6-icon-3 - text-align.svg"
+                alt="text-align"
+              />
+            </button>
+            <button class="--btns-text-option">
+              <img src="assets/img/v6-icon-4 -text-spacing.svg" alt="bold" />
+            </button>
+            <div class="--btns-w-desc">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.5 4V8C1.5 8.28125 1.71875 8.5 2 8.5H4V10H2C0.875 10 0 9.125 0 8V4C0 2.90625 0.875 2 2 2H6C7.09375 2 8 2.90625 8 4H6.5C6.5 3.75 6.25 3.5 6 3.5H2C1.71875 3.5 1.5 3.75 1.5 4ZM14 18C12.875 18 12 17.125 12 16H13.5C13.5 16.2812 13.7188 16.5 14 16.5H18C18.25 16.5 18.5 16.2812 18.5 16V12C18.5 11.75 18.25 11.5 18 11.5H16V10H18C19.0938 10 20 10.9062 20 12V16C20 17.125 19.0938 18 18 18H14ZM13 5C14.0938 5 15 5.90625 15 7V13C15 14.125 14.0938 15 13 15H7C5.875 15 5 14.125 5 13V7C5 5.90625 5.875 5 7 5H13Z"
+                  fill="#292929"
+                />
+              </svg>
+
+              <span>Positie</span>
+            </div>
+            <div class="--btns-w-desc">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.46875 7.78125L7.21875 5.53125C7.0625 5.40625 7 5.21875 7 5C7 4.625 7.3125 4.25 7.75 4.25C7.9375 4.25 8.125 4.34375 8.25 4.5L9.25 5.46875V2.75C9.25 2.34375 9.5625 2 10 2C10.4062 2 10.75 2.34375 10.75 2.75V5.46875L11.7188 4.5C11.8438 4.34375 12.0312 4.25 12.25 4.25C12.625 4.25 13 4.59375 13 5C13 5.21875 12.9062 5.40625 12.75 5.53125L10.5 7.78125C10.4375 7.875 10.25 8 10 8C9.71875 8 9.53125 7.875 9.46875 7.78125ZM10.5 12.2188L12.75 14.5C12.9062 14.625 13 14.8125 13 15C13 15.2188 12.8125 15.75 12.25 15.75C12.0312 15.75 11.8438 15.6875 11.7188 15.5312L10.75 14.5625V17.25C10.75 17.6875 10.4062 18 10 18C9.5625 18 9.25 17.6875 9.25 17.25V14.5625L8.25 15.5312C8.125 15.6875 7.9375 15.75 7.75 15.75C7.34375 15.75 7 15.4375 7 15C7 14.8125 7.0625 14.625 7.21875 14.5L9.46875 12.25C9.65625 12.0312 9.875 12 10 12C10.0938 12 10.3125 12.0312 10.5 12.2188ZM16.25 9.25C16.6562 9.25 17 9.59375 17 10C17 10.4375 16.6562 10.75 16.25 10.75H3.75C3.3125 10.75 3 10.375 3 10C3 9.59375 3.3125 9.25 3.75 9.25H16.25Z"
+                  fill="#292929"
+                />
+              </svg>
+
+              <span>Spiegelen</span>
+            </div>
+            <div class="--btns-w-desc">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 10C18 14.4375 14.4062 18 10 18C5.5625 18 2 14.4375 2 10C2 5.59375 5.5625 2 10 2C14.4062 2 18 5.59375 18 10ZM10 3.5V16.5C13.5625 16.5 16.5 13.5938 16.5 10C16.5 6.4375 13.5625 3.5 10 3.5Z"
+                  fill="#292929"
+                />
+              </svg>
+
+              <span>Transparantie</span>
+            </div>
+          </div>
+          <div class="--preview-container">
+            <div class="--upper-text">
+              <p>Dolgelukkig zijn wij met de geboorte van onze dochter</p>
+            </div>
+            <div class="--middle-text">
+              <h1 class="--hasborder" id="editexth1">VIEVE</h1>
+              <div class="--middletext-content">
+                <input
+                  class="inputsubtitle"
+                  type="text"
+                  value=""
+                  placeholder="3500 gr 12:00 uur 50 cm"
+                />
+                <!-- <p>3500 gr</p> -->
+                <!-- <p>12:00 uur</p> -->
+                <!-- <p>50 cm</p> -->
+              </div>
+            </div>
+            <div class="--lower-text">
+              <h3>trotse ouders</h3>
+              <div class="--lowertext-content">
+                <h3>Bas en Suze De Jong</h3>
+                <p>Maasstraat 1, 1234 AB Maasdam</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="--footer-wrapper">
+        <div class="--bottom-container">
+          <button class="--button-container-back">
+            <img src="assets/img/arrow-back.svg" alt="back" />
+            <p>Terug</p>
+          </button>
+          <div class="--img-bottom-container">
+            <div class="--img-container">
+              <div class="--img-edit"></div>
+            </div>
+            <div class="--img-container">
+              <div class="--img-edit"></div>
+            </div>
+            <div class="--img-container">
+              <div class="--img-edit"></div>
+            </div>
+            <div class="--img-container">
+              <div class="--img-edit"></div>
+            </div>
+            <p>Binnenkant rechts</p>
+          </div>
+          <button class="--button-container-next">
+            <img src="assets/img/arrow-next.svg" alt="next" />
+            <p>Volgende</p>
+          </button>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/index.js"></script>
+    <script src="./js/border.js"></script>
+  </body>
 </html>

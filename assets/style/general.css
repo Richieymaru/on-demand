@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@font-face {
+  font-family: "SF Movie Poster";
+  src: url("../fonts/SF\ Movie\ Poster.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic Regular";
+  src: url("../fonts/Century\ Gothic.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic Bold";
+  src: url("../fonts/GOTHICB.TTF") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Wanderlust Gold";
+  src: url("../fonts/Wanderlust\ Gold\ Pro.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Freeland";
+  src: url("../fonts/Freeland.ttf") format("ttf");
+}
+:root {
+  --main-font: "Ubuntu", sans-serif;
+  --secondary-font: "Century Gothic Regular", sans-serif;
+  --secondary-font-bold: "Century Gothic Bold", sans-serif;
+  --heavy-font: "SF Movie Poster", sans-serif;
+  --freeland-font: "Freeland", sans-serif;
+  --caligraphy-font: "Wanderlust Gold";
+  --main-fontcolor: #292929;
+  --actionbutton-color: #27ae60;
+  --backbutton-color: #f0f0f0;
+  --background-color: #ffffff;
+}
+
+.--main-wrapper {
+  position: relative;
+  margin-inline: auto;
+}
+
+p {
+  color: var(--main-fontcolor);
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+}
